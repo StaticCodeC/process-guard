@@ -1,0 +1,24 @@
+{
+  "monitoring": {
+    "scan_interval": 5,
+    "cpu_threshold": 80.0,
+    "memory_threshold": 1024
+  },
+  "alerts": {
+    "log_file": "logs/security_alerts.log"
+  },
+  "security": {
+    "auto_kill_enabled": false,
+    "whitelist_paths": [
+      "/usr/bin/",
+      "/usr/sbin/",
+      "/usr/lib/",
+      "/bin/",
+      "/sbin/",
+      "/opt/",
+      "/home/omar/.vscode/",
+      "/usr/local/bin/ollama",
+      "/home/omar/.cache/"
+      ]
+  }
+}
