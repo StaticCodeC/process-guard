@@ -1,4 +1,4 @@
-# 🛡️ Process Guard
+#  Process Guard
 
 System process security monitor for Linux - Detects suspicious process behavior in real-time.
 
