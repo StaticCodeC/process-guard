@@ -21,7 +21,7 @@ export default function Navbar({ stats, filter, onFilterChange }) {
     }}>
       {/* Logo */}
       <div style={{ flexShrink: 0 }}>
-        <img src="/logo.png" alt="ZoPark" height={40} style={{ display: 'block' }} />
+        <img src="/logo.png" alt="ZoPark" height={50} style={{ display: 'block', borderRadius: 8, background: '#fff', boxShadow: '0 0 8px rgba(255,255,255,0.25)' }} />
       </div>
 
       {/* Stats */}
