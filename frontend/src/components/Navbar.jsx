@@ -20,15 +20,8 @@ export default function Navbar({ stats, filter, onFilterChange }) {
       zIndex: 1000,
     }}>
       {/* Logo */}
-      <div style={{
-        fontSize: 18,
-        fontWeight: 700,
-        letterSpacing: '-0.5px',
-        color: '#e8eaf6',
-        whiteSpace: 'nowrap',
-        flexShrink: 0,
-      }}>
-        🅿 ZoPark
+      <div style={{ flexShrink: 0 }}>
+        <img src="/logo.png" alt="ZoPark" height={40} style={{ display: 'block' }} />
       </div>
 
       {/* Stats */}
