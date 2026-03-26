@@ -1,0 +1,61 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #0f1117;
+  --surface: #1e2130;
+  --surface-hover: #252840;
+  --border: #2a2f45;
+  --text: #e8eaf6;
+  --text-muted: #8892b0;
+  --blue: #3b82f6;
+  --green: #22c55e;
+  --purple: #a855f7;
+  --red: #ef4444;
+  --yellow: #f59e0b;
+  --radius: 8px;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Leaflet overrides */
+.leaflet-container {
+  background: #0f1117;
+}
+
+.leaflet-control-attribution {
+  background: rgba(15, 17, 23, 0.7) !important;
+  color: #4a5568 !important;
+}
+
+.leaflet-control-attribution a {
+  color: #6b7280 !important;
+}
+
+.leaflet-control-zoom a {
+  background: var(--surface) !important;
+  color: var(--text) !important;
+  border-color: var(--border) !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background: var(--surface-hover) !important;
+}

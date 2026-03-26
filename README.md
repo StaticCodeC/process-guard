@@ -1,74 +1,63 @@
-#  Process Guard
+# ZoPark — Halifax Parking Finder MVP
 
-System process security monitor for Linux - Detects suspicious process behavior in real-time.
-
-## Features
-
-- Real-time CPU and memory monitoring
-- Suspicious executable path detection
-- Automated logging with timestamps
-- Configurable thresholds
-
-## Quick Start
-```bash
-# Install dependencies
-pip install psutil --break-system-packages
-
-# Run (with sudo for full access)
-sudo python3 main.py
-```
-
-## Configuration
-
-Edit `config.json` to customize:
-```json
-{
-  "monitoring": {
-    "scan_interval": 5,
-    "cpu_threshold": 80.0,
-    "memory_threshold": 1024
-  },
-  "security": {
-    "whitelist_paths": ["/usr/bin/", "/usr/lib/", "/bin/"]
-  }
-}
-```
-
-## Example Output
-```
-Process Guard started - Monitoring system...
-Scanned 351 processes
-[WARNING] High CPU usage: miner (PID 1234) using 95.7%
-[WARNING] Suspicious path: script.py (PID 5678) running from /tmp/malware.py
-2 alert(s) detected
-```
+A web app for finding parking in Halifax using real open data from Halifax Regional Municipality.
 
 ## Project Structure
 ```
-process_guard/
-├── main.py       # Entry point
-├── watcher.py    # Monitoring logic
-├── alerts.py     # Alert system
-├── config.json   # Configuration
-└── logs/         # Security logs
+zopark/
+├── backend/           # FastAPI backend
+│   ├── main.py
+│   └── requirements.txt
+├── frontend/          # React + Vite frontend
+│   ├── index.html
+│   ├── package.json
+│   ├── vite.config.js
+│   └── src/
+│       ├── App.jsx
+│       ├── main.jsx
+│       ├── index.css
+│       └── components/
+│           ├── MapView.jsx
+│           ├── Navbar.jsx
+│           ├── SidePanel.jsx
+│           └── AiBanner.jsx
+└── raw_data_halifax/  # Place HRM open data files here
 ```
 
-## Testing
+## Data Setup
 
-Generate a test alert:
+Place the following files in `raw_data_halifax/` (at the project root):
+
+- `Parking_Pay_Stations_*.csv`
+- `Accessible_Parking_Spots_*.geojson`
+- `Park_Ride_*.geojson`
+- `Park_Ride_*.csv`
+
+## Running Locally
+
 ```bash
-# Terminal 1: Run Process Guard
-sudo python3 main.py
+# Backend
+cd backend && pip install -r requirements.txt && uvicorn main:app --reload
 
-# Terminal 2: Create suspicious process
-echo "import time; time.sleep(100)" > /tmp/test.py
-python3 /tmp/test.py &
+# Frontend (separate terminal)
+cd frontend && npm install && npm run dev
 ```
 
-## Author
+Frontend: http://localhost:5173
+Backend API: http://localhost:8000
 
-Omar Abou-El-Faraj - Computer Science Student @ Université de Moncton
+## Features
 
-## License
+- Interactive Leaflet map centered on Halifax
+- 3 parking types: Pay Stations, Accessible Spots, Park & Ride
+- Real-time availability simulation
+- Density heatmap toggle
+- Side panel with spot details + Google Maps directions
+- Dark theme UI
 
-MIT License
+## Data Sources
+
+Halifax Regional Municipality Open Data:
+- Parking Pay Stations
+- Accessible Parking Spots
+- Park & Ride lots
