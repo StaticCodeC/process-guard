@@ -1,6 +1,6 @@
 {
-  "name": "zopark-frontend",
-  "version": "0.1.0",
+  "name": "football-news",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -9,11 +9,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "leaflet": "^1.9.4",
-    "leaflet.heat": "^0.2.0",
+    "i18next": "^23.11.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-leaflet": "^4.2.1"
+    "react-i18next": "^14.1.2",
+    "react-router-dom": "^6.23.1"
   },
   "devDependencies": {
     "@types/react": "^18.3.1",
